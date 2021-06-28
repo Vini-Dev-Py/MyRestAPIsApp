@@ -4,10 +4,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
 using MyRestCarnes.Model.Context;
-using MyRestCarnes.Services;
-using MyRestCarnes.Services.Implementations;
+using MyRestCarnes.Business;
+using MyRestCarnes.Business.Implementations;
+using MyRestCarnes.Repository;
+using Serilog;
+using System;
+using System.Collections.Generic;
+using MyRestCarnes.Repository.Generic;
 
 namespace MyRestCarnes
 {
@@ -32,12 +36,9 @@ namespace MyRestCarnes
 
             services.AddApiVersioning();
 
-            services.AddScoped<IStoreService, StoreServiceImplementation>();
+            services.AddScoped<IStoreBusiness, StoreBusinessImplementation>();
             
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyRestCarnes", Version = "v1" });
-            });
+            services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,8 +47,6 @@ namespace MyRestCarnes
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MyRestCarnes v1"));
             }
 
             app.UseHttpsRedirection();
