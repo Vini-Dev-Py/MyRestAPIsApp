@@ -9,5 +9,6 @@ namespace MyRestCarnes.Model.Context
         public MySQLContext(DbContextOptions<MySQLContext> options) : base(options) {}
 
         public DbSet<Store> Shops { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

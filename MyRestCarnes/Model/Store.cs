@@ -1,13 +1,13 @@
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using MyRestCarnes.Model.Base;
 
 namespace MyRestCarnes.Model
 {
     [Table("store")]
-    public class Store
+    public class Store : BaseEntity
     {
-        [Column("id")]
-        public long Id { get; set; }
-
         [Column("name")]
         public string Name { get; set; }
 
@@ -19,5 +19,15 @@ namespace MyRestCarnes.Model
 
         [Column("status")]
         public string Status { get; set; }
+
+        [Column("abertura")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{HH:mm:ss}")]
+        public TimeSpan Abertura { get; set; }
+
+        [Column("fechamento")]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{HH:mm:ss}")]
+        public TimeSpan Fechamento { get; set; }
     }
 }

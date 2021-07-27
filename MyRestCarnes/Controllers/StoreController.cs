@@ -1,8 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyRestCarnes.Model;
-using MyRestCarnes.Services;
+using MyRestCarnes.Business;
+using MyRestCarnes.Data.VO;
 
 namespace MyRestCarnes.Controllers
 {
@@ -12,57 +12,49 @@ namespace MyRestCarnes.Controllers
     public class StoreController : ControllerBase
     {
         private readonly ILogger<StoreController> _logger;
-        private IStoreService _storeService;
+        private IStoreBusiness _storeBusiness;
 
-        public StoreController(ILogger<StoreController> logger, IStoreService storeService)
+        public StoreController(ILogger<StoreController> logger, IStoreBusiness storeBusiness)
         {
             _logger = logger;
-            _storeService = storeService;
+            _storeBusiness = storeBusiness;
         }
 
         [HttpGet]
         public IActionResult GetShops() 
         {
-            return Ok(_storeService.FindAll());
+            return Ok(_storeBusiness.FindAll());
         }
 
         [HttpGet("{id}")]
         public IActionResult GetStore(long id) 
         {
-            var store = _storeService.FindByID(id);
+            var store = _storeBusiness.FindByID(id);
             if (store == null) return NotFound();
 
             return Ok(store);
         }
 
         [HttpPost]
-        public IActionResult CreateStore([FromBody] Store store)
+        public IActionResult CreateStore([FromBody] StoreVO store)
         {
             if (store == null) return BadRequest();
 
-            return Ok(_storeService.Create(store));
+            return Ok(_storeBusiness.Create(store));
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateStore([FromBody] Store store)
+        public IActionResult UpdateStore([FromBody] StoreVO store)
         {
             if (store == null) return BadRequest();
-            return Ok(_storeService.Update(store));
+            return Ok(_storeBusiness.Update(store));
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(long id)
         {
-            try
-            {
-                _storeService.Delete(id);
-
-                return Ok($"Store number {id} sucessfully deleted");
-            }
-            catch (Exception)
-            {
-                return BadRequest($"Store number {id} was not deleted successfully");
-            }
+            _storeBusiness.Delete(id);
+            return NoContent();
         }
     }
 }
