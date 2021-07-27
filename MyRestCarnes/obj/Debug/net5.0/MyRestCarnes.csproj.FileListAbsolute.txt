@@ -49,3 +49,10 @@ C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\S
 C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Serilog.Sinks.Console.dll
 C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Serilog.Sinks.Debug.dll
 C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Serilog.Sinks.File.dll
+C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
+C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
+C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
+C:\Programação\NewGitHub\AppRest\MyRestAPIsApp\MyRestCarnes\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
