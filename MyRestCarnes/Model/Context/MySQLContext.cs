@@ -10,5 +10,6 @@ namespace MyRestCarnes.Model.Context
 
         public DbSet<Store> Shops { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }
