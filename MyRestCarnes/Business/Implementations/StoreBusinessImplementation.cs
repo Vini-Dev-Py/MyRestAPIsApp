@@ -15,7 +15,7 @@ namespace MyRestCarnes.Business.Implementations
         public StoreBusinessImplementation(IRepository<Store> repository)
         {
             _repository = repository;
-             _converter = new StoreConverter();
+            _converter = new StoreConverter();
         }
         public List<StoreVO> FindAll()
         {

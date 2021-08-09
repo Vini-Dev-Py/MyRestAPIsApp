@@ -13,10 +13,15 @@ namespace MyRestCarnes.Data.Converter.Implementations
             if (origin == null) return null;
             return new User
             {
-                FirstName = origin.FirstName,
+                Id = origin.Id,
                 Password = origin.Password,
+                FirstName = origin.FirstName,
                 LastName = origin.LastName,
                 Email = origin.Email,
+                Role = origin.Role,
+                Address = origin.Address,
+                CPF = origin.CPF,
+                Phone = origin.Phone,
             };
         }
 
@@ -31,10 +36,15 @@ namespace MyRestCarnes.Data.Converter.Implementations
             if (origin == null) return null;
             return new UserVO
             {
-                FirstName = origin.FirstName,
+                Id = origin.Id,
                 Password = origin.Password,
+                FirstName = origin.FirstName,
                 LastName = origin.LastName,
                 Email = origin.Email,
+                Role = origin.Role,
+                Address = origin.Address,
+                CPF = origin.CPF,
+                Phone = origin.Phone,
             };
         }
 

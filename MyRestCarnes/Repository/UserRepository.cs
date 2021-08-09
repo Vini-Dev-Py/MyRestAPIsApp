@@ -1,7 +1,9 @@
-﻿using MyRestCarnes.Data.VO;
+﻿using Microsoft.EntityFrameworkCore;
+using MyRestCarnes.Data.VO;
 using MyRestCarnes.Model;
 using MyRestCarnes.Model.Context;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -12,9 +14,12 @@ namespace MyRestCarnes.Repository
     {
         private readonly MySQLContext _context;
 
+        private DbSet<User> dataset;
+
         public UserRepository(MySQLContext context)
         {
             _context = context;
+            dataset = _context.Set<User>();
         }
 
         public User ValidateCredentials(UserVO user)
@@ -63,6 +68,15 @@ namespace MyRestCarnes.Repository
             Byte[] inputBytes = Encoding.UTF8.GetBytes(input);
             Byte[] hashedBytes = algorithm.ComputeHash(inputBytes);
             return BitConverter.ToString(hashedBytes);
+        }
+        public User FindByUsername(string username)
+        {
+            return _context.Users.SingleOrDefault(u => u.FirstName.Equals(username));
+        }
+
+        public List<User> FindAll()
+        {
+            return dataset.ToList();
         }
     }
 }

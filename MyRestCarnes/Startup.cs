@@ -118,6 +118,8 @@ namespace MyRestCarnes
             services.AddTransient<ITokenService, TokenService>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IStoreBusiness, StoreBusinessImplementation>();
+            services.AddScoped<IProductBusiness, ProductBusinessImplementation>();
+            services.AddScoped<IUserBusiness, UserBusinessImplementation>();
             services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
         }
 

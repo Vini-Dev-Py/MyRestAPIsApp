@@ -4811,11 +4811,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Programação\\NewGitHub\\AppRest\\MyRestAPIsApp\\MyRestCarnes\\MyRestCarnes.csproj",
+      "projectUniqueName": "C:\\Programação\\NewGitHub\\AppRest\\MyRestAPIsApp\\MyRestAPIsApp\\MyRestCarnes\\MyRestCarnes.csproj",
       "projectName": "MyRestCarnes",
-      "projectPath": "c:\\Programação\\NewGitHub\\AppRest\\MyRestAPIsApp\\MyRestCarnes\\MyRestCarnes.csproj",
+      "projectPath": "C:\\Programação\\NewGitHub\\AppRest\\MyRestAPIsApp\\MyRestAPIsApp\\MyRestCarnes\\MyRestCarnes.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "c:\\Programação\\NewGitHub\\AppRest\\MyRestAPIsApp\\MyRestCarnes\\obj\\",
+      "outputPath": "C:\\Programação\\NewGitHub\\AppRest\\MyRestAPIsApp\\MyRestAPIsApp\\MyRestCarnes\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
