@@ -20,6 +20,7 @@ namespace MyRestCarnes.Data.Converter.Implementations
                 Image = origin.Image,
                 Price = origin.Price,
                 StoreID = origin.StoreID,
+                Featured = origin.Featured
             };
         }
 
@@ -40,7 +41,8 @@ namespace MyRestCarnes.Data.Converter.Implementations
                 Code = origin.Code,
                 Image = origin.Image,
                 Price = origin.Price,
-                StoreID = origin.StoreID
+                StoreID = origin.StoreID,
+                Featured = origin.Featured
             };
         }
 

@@ -20,5 +20,8 @@ namespace MyRestCarnes.Model
 
         [Column("storeid")]
         public long StoreID { get; set; }
+
+        [Column("featured")]
+        public string Featured { get; set; }
     }
 }

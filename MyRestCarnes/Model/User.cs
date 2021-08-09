@@ -19,6 +19,18 @@ namespace MyRestCarnes.Model
 
         [Column("password")]
         public string Password { get; set; }
+        
+        [Column("role")]
+        public string Role { get; set; }
+
+        [Column("address")]
+        public string Address { get; set; }
+
+        [Column("cpf")]
+        public string CPF { get; set; }
+
+        [Column("phone")]
+        public string Phone { get; set; }
 
         [Column("refresh_token")]
         public string RefreshToken { get; set; }

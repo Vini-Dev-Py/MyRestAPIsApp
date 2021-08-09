@@ -8,5 +8,6 @@ namespace MyRestCarnes.Data.VO
         public string Image { get; set; }
         public decimal Price { get; set; }
         public long StoreID { get; set; }
+        public string Featured { get; set; }
     }
 }
